@@ -114,7 +114,7 @@
         .course-list .course {
             background: #fff;
             margin: 1rem;
-            padding: 2rem;
+            padding: 1.5rem;
             width: 30%;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -126,6 +126,12 @@
         .course-list .course:hover {
             transform: translateY(-10px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-list .course img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
         }
 
         .course-list .course h3 {
@@ -276,12 +282,36 @@
     </footer>
 
     <script>
-        // Sample course data with hyperlinks
+        // Sample course data with images
         const courses = [
-            { title: "Web Development", description: "Learn to build modern websites.", instructor: "John Doe", link: "https://example.com/web-development" },
-            { title: "Data Science", description: "Master data analysis and machine learning.", instructor: "Jane Smith", link: "https://example.com/data-science" },
-            { title: "Graphic Design", description: "Create stunning visuals with Adobe tools.", instructor: "Alice Johnson", link: "https://example.com/graphic-design" },
-            { title: "Digital Marketing", description: "Learn SEO, SEM, and social media marketing.", instructor: "Bob Brown", link: "https://example.com/digital-marketing" }
+            { 
+                title: "Web Development", 
+                description: "Learn to build modern websites.", 
+                instructor: "John Doe", 
+                link: "https://example.com/web-development",
+                image: "https://via.placeholder.com/400x200?text=Web+Development" 
+            },
+            { 
+                title: "Data Science", 
+                description: "Master data analysis and machine learning.", 
+                instructor: "Jane Smith", 
+                link: "https://example.com/data-science",
+                image: "https://via.placeholder.com/400x200?text=Data+Science" 
+            },
+            { 
+                title: "Graphic Design", 
+                description: "Create stunning visuals with Adobe tools.", 
+                instructor: "Alice Johnson", 
+                link: "https://example.com/graphic-design",
+                image: "https://via.placeholder.com/400x200?text=Graphic+Design" 
+            },
+            { 
+                title: "Digital Marketing", 
+                description: "Learn SEO, SEM, and social media marketing.", 
+                instructor: "Bob Brown", 
+                link: "https://example.com/digital-marketing",
+                image: "https://via.placeholder.com/400x200?text=Digital+Marketing" 
+            }
         ];
 
         // Function to dynamically generate course list
@@ -293,6 +323,7 @@
                 courseElement.href = course.link;
                 courseElement.target = "_blank"; // Open link in a new tab
                 courseElement.innerHTML = `
+                    <img src="${course.image}" alt="${course.title}">
                     <h3>${course.title}</h3>
                     <p>${course.description}</p>
                     <p class="instructor"><strong>Instructor:</strong> ${course.instructor}</p>
